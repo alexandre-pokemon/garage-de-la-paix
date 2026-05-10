@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/services", label: "Services" },
+  { href: "/rendez-vous", label: "Rendez-vous" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -40,13 +41,17 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-2">
           <Button
             render={<a href={SITE.phoneFixedHref} />}
+            variant="outline"
             className="font-semibold"
           >
             <PhoneIcon className="h-4 w-4" />
             {SITE.phoneFixed}
+          </Button>
+          <Button render={<Link href="/rendez-vous" />} className="font-semibold">
+            Prendre rendez-vous
           </Button>
         </div>
 
@@ -77,8 +82,16 @@ export function Header() {
               </Link>
             ))}
             <Button
-              render={<a href={SITE.phoneFixedHref} />}
+              render={<Link href="/rendez-vous" />}
               className="mt-2 h-12 text-base font-semibold"
+              onClick={() => setOpen(false)}
+            >
+              Prendre rendez-vous
+            </Button>
+            <Button
+              render={<a href={SITE.phoneFixedHref} />}
+              variant="outline"
+              className="h-12 text-base font-semibold"
             >
               <PhoneIcon className="h-4 w-4" />
               Appeler le {SITE.phoneFixed}

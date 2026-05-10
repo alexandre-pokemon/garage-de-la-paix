@@ -63,7 +63,17 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/85 to-zinc-950/40" />
       </div>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28">
-        <Badge className="bg-primary/15 text-primary border-primary/30 hover:bg-primary/15">
+        <div className="relative aspect-[1600/583] w-full max-w-xl overflow-hidden rounded-xl bg-white shadow-2xl">
+          <Image
+            src="/enseigne.jpg"
+            alt="Logo Garage de la Paix"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 576px"
+            className="object-contain"
+          />
+        </div>
+        <Badge className="mt-6 bg-primary/15 text-primary border-primary/30 hover:bg-primary/15">
           {SITE.address.city}
         </Badge>
         <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight max-w-3xl">
@@ -76,21 +86,21 @@ function Hero() {
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-3">
           <Button
-            render={<a href={SITE.phoneFixedHref} />}
+            render={<Link href="/rendez-vous" />}
             size="lg"
             className="h-12 font-semibold"
           >
-            <PhoneIcon className="h-5 w-5" />
-            {SITE.phoneFixed}
+            Prendre rendez-vous
+            <ArrowRightIcon className="h-4 w-4" />
           </Button>
           <Button
-            render={<Link href="/contact" />}
+            render={<a href={SITE.phoneFixedHref} />}
             size="lg"
             variant="outline"
             className="h-12 border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white"
           >
-            Devis gratuit
-            <ArrowRightIcon className="h-4 w-4" />
+            <PhoneIcon className="h-5 w-5" />
+            {SITE.phoneFixed}
           </Button>
         </div>
       </div>
@@ -323,29 +333,29 @@ function FinalCta() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-14 grid sm:grid-cols-[1fr_auto] gap-6 items-center">
         <div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-            Une question ? Un devis à demander ?
+            Prêt à passer au garage ?
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Appelez-nous, écrivez sur WhatsApp ou demandez un devis en ligne.
+            Réservez votre créneau en ligne ou appelez-nous directement.
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
           <Button
-            render={<a href={SITE.phoneFixedHref} />}
+            render={<Link href="/rendez-vous" />}
             size="lg"
             className="h-12 font-semibold"
           >
-            <PhoneIcon className="h-5 w-5" />
-            {SITE.phoneFixed}
+            Prendre rendez-vous
+            <ArrowRightIcon className="h-4 w-4" />
           </Button>
           <Button
-            render={<Link href="/contact" />}
+            render={<a href={SITE.phoneFixedHref} />}
             size="lg"
             variant="outline"
             className="h-12"
           >
-            Devis gratuit
-            <ArrowRightIcon className="h-4 w-4" />
+            <PhoneIcon className="h-5 w-5" />
+            {SITE.phoneFixed}
           </Button>
         </div>
       </div>
