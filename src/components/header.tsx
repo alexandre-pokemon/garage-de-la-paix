@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/services", label: "Services" },
   { href: "/rendez-vous", label: "Rendez-vous" },
+  { href: "/devis", label: "Devis" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -50,6 +51,13 @@ export function Header() {
             <PhoneIcon className="h-4 w-4" />
             {SITE.phoneFixed}
           </Button>
+          <Button
+            render={<Link href="/devis" />}
+            variant="outline"
+            className="font-semibold"
+          >
+            Demander un devis
+          </Button>
           <Button render={<Link href="/rendez-vous" />} className="font-semibold">
             Prendre rendez-vous
           </Button>
@@ -87,6 +95,14 @@ export function Header() {
               onClick={() => setOpen(false)}
             >
               Prendre rendez-vous
+            </Button>
+            <Button
+              render={<Link href="/devis" />}
+              variant="outline"
+              className="h-12 text-base font-semibold"
+              onClick={() => setOpen(false)}
+            >
+              Demander un devis
             </Button>
             <Button
               render={<a href={SITE.phoneFixedHref} />}

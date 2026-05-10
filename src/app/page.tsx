@@ -84,13 +84,22 @@ function Hero() {
           diagnostic électronique. Devis gratuit, intervention rapide,
           toutes marques.
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-3">
+        <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
           <Button
             render={<Link href="/rendez-vous" />}
             size="lg"
             className="h-12 font-semibold"
           >
             Prendre rendez-vous
+            <ArrowRightIcon className="h-4 w-4" />
+          </Button>
+          <Button
+            render={<Link href="/devis" />}
+            size="lg"
+            variant="outline"
+            className="h-12 border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white"
+          >
+            Demander un devis
             <ArrowRightIcon className="h-4 w-4" />
           </Button>
           <Button
@@ -336,16 +345,25 @@ function FinalCta() {
             Prêt à passer au garage ?
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Réservez votre créneau en ligne ou appelez-nous directement.
+            Réservez votre créneau, demandez un devis gratuit ou appelez-nous.
           </p>
         </div>
-        <div className="flex flex-col sm:flex-row gap-3">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-3">
           <Button
             render={<Link href="/rendez-vous" />}
             size="lg"
             className="h-12 font-semibold"
           >
             Prendre rendez-vous
+            <ArrowRightIcon className="h-4 w-4" />
+          </Button>
+          <Button
+            render={<Link href="/devis" />}
+            size="lg"
+            variant="outline"
+            className="h-12"
+          >
+            Demander un devis
             <ArrowRightIcon className="h-4 w-4" />
           </Button>
           <Button
