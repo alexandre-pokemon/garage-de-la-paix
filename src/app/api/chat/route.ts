@@ -3,7 +3,7 @@ import { convertToModelMessages, streamText, type UIMessage } from "ai";
 export const runtime = "nodejs";
 export const maxDuration = 30;
 
-const SYSTEM_PROMPT = `Tu es l'assistant virtuel du Garage de la Paix, un garage automobile indépendant à Le Perreux-sur-Marne.
+const SYSTEM_PROMPT = `Tu es l'assistant virtuel du Garage de la Paix, un garage automobile indépendant au Perreux-sur-Marne.
 
 Informations du garage :
 - Nom : Garage de la Paix

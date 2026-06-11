@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Garage de la Paix",
   shortName: "Garage de la Paix",
-  tagline: "Mécanique auto à Le Perreux-sur-Marne",
+  tagline: "Mécanique auto au Perreux-sur-Marne",
   address: {
     street: "99 bis rue de la Paix",
     postalCode: "94170",

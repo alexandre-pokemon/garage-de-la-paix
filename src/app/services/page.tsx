@@ -21,7 +21,7 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Nos services - Mécanique auto à Le Perreux-sur-Marne",
+  title: "Nos services - Mécanique auto au Perreux-sur-Marne",
   description:
     "Vidange, freinage, contrôle technique, pneus, climatisation, mécanique générale, diagnostic électronique. Garage de la Paix au Perreux-sur-Marne (94170).",
 };

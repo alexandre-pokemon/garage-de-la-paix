@@ -15,11 +15,11 @@ const SITE_URL = "https://garage-de-la-paix-demo.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Garage de la Paix - Mécanique Auto à Le Perreux-sur-Marne (94)",
+    default: "Garage de la Paix — Mécanique auto au Perreux-sur-Marne (94)",
     template: "%s | Garage de la Paix",
   },
   description:
-    "Garage indépendant à Le Perreux-sur-Marne (94170). Vidange, freins, contrôle technique, pneus, climatisation, diagnostic électronique. Devis gratuit. Tél : 01 43 24 36 27.",
+    "Garage indépendant au Perreux-sur-Marne (94170). Vidange, freins, contrôle technique, pneus, climatisation, diagnostic électronique. Devis gratuit. Tél : 01 43 24 36 27.",
   keywords: [
     "garage Le Perreux-sur-Marne",
     "mécanicien 94170",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     "garage automobile Val-de-Marne",
   ],
   openGraph: {
-    title: "Garage de la Paix - Mécanique Auto à Le Perreux-sur-Marne (94)",
+    title: "Garage de la Paix — Mécanique auto au Perreux-sur-Marne (94)",
     description:
-      "Garage indépendant à Le Perreux-sur-Marne. Mécanique générale, entretien, réparation. Devis gratuit.",
+      "Garage indépendant au Perreux-sur-Marne. Mécanique générale, entretien, réparation. Devis gratuit.",
     url: SITE_URL,
     siteName: "Garage de la Paix",
     locale: "fr_FR",

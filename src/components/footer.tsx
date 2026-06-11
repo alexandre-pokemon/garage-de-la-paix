@@ -9,9 +9,14 @@ export function Footer() {
         <div>
           <h3 className="text-lg font-semibold">{SITE.name}</h3>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            Votre garagiste de confiance à {SITE.address.city}.
+            Votre garagiste de confiance au Perreux-sur-Marne.
             Mécanique générale, entretien et réparation toutes marques.
           </p>
+          <ul className="mt-4 space-y-1 text-sm text-muted-foreground">
+            <li>Lun – Ven : 8h00 – 18h30</li>
+            <li>Samedi : 9h00 – 12h30</li>
+            <li>Dimanche : fermé</li>
+          </ul>
         </div>
 
         <div>
@@ -67,8 +72,18 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/rendez-vous" className="hover:text-primary">
+                Prendre rendez-vous
+              </Link>
+            </li>
+            <li>
+              <Link href="/devis" className="hover:text-primary">
+                Demander un devis
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" className="hover:text-primary">
-                Contact & devis
+                Contact
               </Link>
             </li>
           </ul>

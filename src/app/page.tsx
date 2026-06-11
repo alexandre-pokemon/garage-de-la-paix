@@ -41,6 +41,7 @@ export default function Home() {
       <Hero />
       <ValueProps />
       <ServicesPreview />
+      <ProcessSection />
       <GarageSection />
       <HoursSection />
       <FinalCta />
@@ -76,10 +77,10 @@ function Hero() {
         <Badge className="mt-6 bg-primary/15 text-primary border-primary/30 hover:bg-primary/15">
           {SITE.address.city}
         </Badge>
-        <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight max-w-3xl">
-          Votre garage de confiance à Le Perreux-sur-Marne.
+        <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight max-w-3xl text-balance">
+          Votre garage de confiance au Perreux-sur-Marne.
         </h1>
-        <p className="mt-5 text-lg text-zinc-300 max-w-2xl">
+        <p className="mt-5 text-lg text-zinc-300 max-w-2xl leading-relaxed">
           Mécanique générale, entretien, freinage, pneus, climatisation,
           diagnostic électronique. Devis gratuit, intervention rapide,
           toutes marques.
@@ -111,6 +112,20 @@ function Hero() {
             <PhoneIcon className="h-5 w-5" />
             {SITE.phoneFixed}
           </Button>
+        </div>
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-zinc-300">
+          <span className="inline-flex items-center gap-2">
+            <MapPinIcon className="h-4 w-4 text-primary" />
+            {SITE.address.street}, {SITE.address.city}
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <ClockIcon className="h-4 w-4 text-primary" />
+            Lun–Ven 8h–18h30 · Sam 9h–12h30
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <CheckIcon className="h-4 w-4 text-primary" />
+            Devis gratuit, sans engagement
+          </span>
         </div>
       </div>
     </section>
@@ -216,6 +231,57 @@ function ServicesPreview() {
   );
 }
 
+function ProcessSection() {
+  const steps = [
+    {
+      step: "1",
+      title: "Décrivez votre besoin",
+      desc: "Par téléphone, via le formulaire de devis ou en passant à l'atelier. Nous établissons un chiffrage clair et gratuit.",
+    },
+    {
+      step: "2",
+      title: "Réservez votre créneau",
+      desc: "Nous convenons ensemble d'une date qui vous arrange. La plupart des interventions sont réalisées dans la journée.",
+    },
+    {
+      step: "3",
+      title: "Repartez l'esprit tranquille",
+      desc: "Nous vous expliquons ce qui a été fait, pièces à l'appui. Pas de surprise sur la facture : c'est le devis, rien de plus.",
+    },
+  ];
+
+  return (
+    <section className="py-14 sm:py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="max-w-2xl">
+          <Badge className="bg-primary/15 text-primary border-primary/30 hover:bg-primary/15">
+            Comment ça se passe
+          </Badge>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
+            Simple, clair, sans surprise.
+          </h2>
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {steps.map((item) => (
+            <div
+              key={item.step}
+              className="relative rounded-xl border border-border bg-card p-6"
+            >
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground font-bold">
+                {item.step}
+              </span>
+              <h3 className="mt-4 font-semibold">{item.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function GarageSection() {
   return (
     <section className="py-14 sm:py-20">
@@ -297,18 +363,43 @@ function HoursSection() {
             Passez à l'atelier ou appelez-nous pour prendre rendez-vous.
           </p>
           <div className="mt-6 rounded-xl border border-border bg-card p-5">
-            <div className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-lg bg-primary/10 text-primary">
-                <MapPinIcon className="h-5 w-5" />
+            <div className="flex items-center justify-between gap-4 flex-wrap">
+              <div className="flex items-center gap-3">
+                <div className="grid h-10 w-10 place-items-center rounded-lg bg-primary/10 text-primary">
+                  <MapPinIcon className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Adresse</p>
+                  <p className="font-medium">
+                    {SITE.address.street}, {SITE.address.postalCode}{" "}
+                    {SITE.address.city}
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Adresse</p>
-                <p className="font-medium">
-                  {SITE.address.street}, {SITE.address.postalCode}{" "}
-                  {SITE.address.city}
-                </p>
-              </div>
+              <Button
+                render={
+                  <a
+                    href={SITE.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                }
+                variant="outline"
+                size="sm"
+              >
+                Itinéraire
+                <ArrowRightIcon className="h-4 w-4" />
+              </Button>
             </div>
+          </div>
+          <div className="mt-4 overflow-hidden rounded-xl border border-border">
+            <iframe
+              src={SITE.mapEmbedSrc}
+              title="Plan d'accès au Garage de la Paix"
+              className="h-64 w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
 
